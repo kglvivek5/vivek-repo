@@ -1,0 +1,78 @@
+{
+	"questions": [{
+		"question": {
+			"topic" : "SQL",
+			"stem" : "What is Oracle"	
+		},
+		"answers": [{
+			"answerOption": "It is a database",
+			"correctAnswer": 1
+		},{
+			"answerOption": "It is a greek god",
+			"correctAnswer": 0
+		},{
+			"answerOption": "It is a software",
+			"correctAnswer": 0
+		},{
+			"answerOption": "It is a programming language",
+			"correctAnswer": 0
+			}]
+	},
+	{
+		"question": {
+			"topic" : "Java",
+			"stem" : "What is Java"	
+		},
+		"answers": [{
+			"answerOption": "It is a Coffee",
+			"correctAnswer": 0
+		},{
+			"answerOption": "It is a programming language",
+			"correctAnswer": 1
+		},{
+			"answerOption": "It is an animal",
+			"correctAnswer": 0
+		},{
+			"answerOption": "It is a Plant",
+			"correctAnswer": 0
+			}]
+	},
+	{
+		"question": {
+			"topic" : "Java",
+			"stem" : "What is the purpose of this keyword"	
+		},
+		"answers": [{
+			"answerOption": "Used to reference the current class",
+			"correctAnswer": 1
+		},{
+			"answerOption": "No purpose of this keyword",
+			"correctAnswer": 0
+		},{
+			"answerOption": "Used to access the private variables",
+			"correctAnswer": 0
+		},{
+			"answerOption": "Used in inheritance and overriding",
+			"correctAnswer": 0
+			}]
+	},
+	{
+		"question": {
+			"topic" : "Java",
+			"stem" : "What is method overriding"	
+		},
+		"answers": [{
+			"answerOption": "It is not a concept available in Java",
+			"correctAnswer": 0
+		},{
+			"answerOption": "It is same as method overloading",
+			"correctAnswer": 0
+		},{
+			"answerOption": "It is used to implement the methods from the super class in inheritance",
+			"correctAnswer": 1
+		},{
+			"answerOption": "It is used to implement any methods available in abstract class",
+			"correctAnswer": 0
+			}]
+	}]
+}
