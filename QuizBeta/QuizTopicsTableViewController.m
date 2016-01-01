@@ -11,6 +11,7 @@
 #import "Question+CoreDataProperties.h"
 #import "Answer+CoreDataProperties.h"
 #import "QuestionDetailViewController.h"
+#import "SettingsViewController.h"
 
 
 @interface QuizTopicsTableViewController ()
@@ -35,20 +36,14 @@
     // Get the Managed Object Context from Application Delegate
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = app.managedObjectContext;
+    [self getDataForQuestionsTableViewInContext];
     
-    NSError *error;
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Question"];
-    request.resultType = NSDictionaryResultType;
-    request.returnsDistinctResults = YES;
-    // Used to retrieve only particular property/column from Core data
-    [request setPropertiesToFetch:[NSArray arrayWithObjects:@"topic", nil]];
-    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"topic" ascending:YES];
-    request.sortDescriptors = @[sort];
-    NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
-    self.topics = [[NSMutableArray alloc] init];
-    for (id currentRecord in results) {
-        [self.topics addObject:[currentRecord objectForKey:@"topic"]];
-    }
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self getDataForQuestionsTableViewInContext];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -118,9 +113,32 @@
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         qttvc.topic = self.topics[indexPath.row];
         qttvc.context = self.managedObjectContext;
+    } else if ([segue.destinationViewController isKindOfClass:[SettingsViewController class]]) {
+        SettingsViewController *svc = segue.destinationViewController;
+        svc.context = self.managedObjectContext;
     }
     
 }
+
+#pragma mark - Supporting Methods
+
+- (void) getDataForQuestionsTableViewInContext {
+    NSError *error;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Question"];
+    request.resultType = NSDictionaryResultType;
+    request.returnsDistinctResults = YES;
+    // Used to retrieve only particular property/column from Core data
+    [request setPropertiesToFetch:[NSArray arrayWithObjects:@"topic", nil]];
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"topic" ascending:YES];
+    request.sortDescriptors = @[sort];
+    NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+    self.topics = [[NSMutableArray alloc] init];
+    for (id currentRecord in results) {
+        [self.topics addObject:[currentRecord objectForKey:@"topic"]];
+    }
+    
+}
+
 
 
 @end

@@ -22,6 +22,8 @@
 		1BACE86C1C18728400BD9B69 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 1BACE86B1C18728400BD9B69 /* Data */; };
 		1BE3128C1C259A5D00C46A5A /* QuestionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE3128B1C259A5D00C46A5A /* QuestionDetailViewController.m */; };
 		1BE762071C2536CE0083E652 /* QuizTopicsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE762061C2536CE0083E652 /* QuizTopicsTableViewController.m */; };
+		1BEEE7801C2F9B93002BB05B /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BEEE77F1C2F9B93002BB05B /* SettingsViewController.m */; };
+		1BF157401C35374600559B36 /* HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF1573F1C35374600559B36 /* HelperMethods.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,11 @@
 		1BE3128B1C259A5D00C46A5A /* QuestionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionDetailViewController.m; sourceTree = "<group>"; };
 		1BE762051C2536CE0083E652 /* QuizTopicsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizTopicsTableViewController.h; sourceTree = "<group>"; };
 		1BE762061C2536CE0083E652 /* QuizTopicsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizTopicsTableViewController.m; sourceTree = "<group>"; };
+		1BE841021C3671BA00C7340A /* QuizApp.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuizApp.pch; sourceTree = "<group>"; };
+		1BEEE77E1C2F9B93002BB05B /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		1BEEE77F1C2F9B93002BB05B /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		1BF1573E1C35374600559B36 /* HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperMethods.h; sourceTree = "<group>"; };
+		1BF1573F1C35374600559B36 /* HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperMethods.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +139,8 @@
 				1B2358411C0B085600FCC6A5 /* AppDelegate.h */,
 				1B2358421C0B085600FCC6A5 /* AppDelegate.m */,
 				1B2358471C0B085600FCC6A5 /* Main.storyboard */,
+				1BEEE77E1C2F9B93002BB05B /* SettingsViewController.h */,
+				1BEEE77F1C2F9B93002BB05B /* SettingsViewController.m */,
 				1BE3128A1C259A5D00C46A5A /* QuestionDetailViewController.h */,
 				1BE3128B1C259A5D00C46A5A /* QuestionDetailViewController.m */,
 				1B23584D1C0B085600FCC6A5 /* Assets.xcassets */,
@@ -141,6 +150,9 @@
 				1B2358521C0B085600FCC6A5 /* Info.plist */,
 				1B23584A1C0B085600FCC6A5 /* QuizBeta.xcdatamodeld */,
 				1B23583E1C0B085600FCC6A5 /* Supporting Files */,
+				1BF1573E1C35374600559B36 /* HelperMethods.h */,
+				1BF1573F1C35374600559B36 /* HelperMethods.m */,
+				1BE841021C3671BA00C7340A /* QuizApp.pch */,
 			);
 			path = QuizBeta;
 			sourceTree = "<group>";
@@ -302,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BF157401C35374600559B36 /* HelperMethods.m in Sources */,
 				1BE3128C1C259A5D00C46A5A /* QuestionDetailViewController.m in Sources */,
 				1B2358AD1C0B0F5B00FCC6A5 /* Answer.m in Sources */,
 				1B2358431C0B085600FCC6A5 /* AppDelegate.m in Sources */,
@@ -309,6 +322,7 @@
 				1B2358AE1C0B0F5B00FCC6A5 /* Question+CoreDataProperties.m in Sources */,
 				1BE762071C2536CE0083E652 /* QuizTopicsTableViewController.m in Sources */,
 				1B2358AF1C0B0F5B00FCC6A5 /* Question.m in Sources */,
+				1BEEE7801C2F9B93002BB05B /* SettingsViewController.m in Sources */,
 				1B2358401C0B085600FCC6A5 /* main.m in Sources */,
 				1B2358AC1C0B0F5B00FCC6A5 /* Answer+CoreDataProperties.m in Sources */,
 			);
@@ -449,6 +463,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = QuizBeta/QuizApp.pch;
 				INFOPLIST_FILE = QuizBeta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edu.vivek.QuizBeta;
@@ -460,6 +475,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = QuizBeta/QuizApp.pch;
 				INFOPLIST_FILE = QuizBeta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edu.vivek.QuizBeta;

@@ -12,6 +12,8 @@
 
 @interface QuestionDetailViewController ()
 
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+
 @property (strong, nonatomic) IBOutlet UILabel *questionStemLbl;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *optionBtns;
 @property (strong, nonatomic) IBOutlet UILabel *resultLbl;
@@ -48,6 +50,7 @@
 //    }
     self.questionList = [ques mutableCopy];
 //    NSLog(@"%lu",[self.questionList count]);
+
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -55,13 +58,9 @@
     [self populateUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)populateUI {
     [self populateBarButtonText];
+    self.resultLbl.text = @"";
     int randNum = arc4random_uniform((int)[self.questionList count]);
     if ([self.questionList count] > 0) {
         self.q = self.questionList[randNum];
@@ -76,7 +75,7 @@
         for (UIButton *button in self.optionBtns) {
             [button setTitle:self.ansList[i] forState:UIControlStateNormal];
             button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-            button.titleLabel.numberOfLines = 2;
+            button.titleLabel.numberOfLines = 3;
             button.tag = i;
             i++;
         }

@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "Question+CoreDataProperties.h"
 #import "Answer+CoreDataProperties.h"
+#import "SettingsViewController.h"
+#import "HelperMethods.h"
 
 @interface AppDelegate ()
 
@@ -36,12 +38,19 @@
 //    NSError *error;
 //    [self.managedObjectContext save:&error];
 //
-    
+    SettingsViewController *settings = [[SettingsViewController alloc] init];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
     if ([userDefaults boolForKey:@"isFirstTimeLaunch"] == NO) {
         NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Questions" ofType:@"json" inDirectory:@"Data"];
-        if (filePath) {
+        [settings loadCoreDataFromJSONFile:filePath inManagedObjectContext:self.managedObjectContext];
+        [userDefaults setObject:[HelperMethods getFileVersionInPath:filePath] forKey:FILE_VERSION];
+        NSError *error;
+        [[NSFileManager defaultManager] copyItemAtPath:filePath toPath:[[HelperMethods applicationDocumentsDirectory] stringByAppendingPathComponent:@"Questions.json"] error:&error];
+        if (error) {
+            NSLog(@"%@",error.localizedDescription);
+        }
+        /* if (filePath) {
             NSData *questionData = [[NSData alloc] initWithContentsOfFile:filePath];
             NSError *error;
             NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:questionData options:0 error:&error];
@@ -67,17 +76,13 @@
                     NSError *error;
                     [self.managedObjectContext save:&error];
                 }
-                
-                
             }
         } else {
             NSLog(@"File not found");
-        }
+        } */
         [userDefaults setBool:YES forKey:@"isFirstTimeLaunch"];
         [userDefaults synchronize];
     }
-    
-    
     
     return YES;
 }

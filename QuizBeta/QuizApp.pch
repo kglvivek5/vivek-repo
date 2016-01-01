@@ -1,0 +1,18 @@
+//
+//  QuizApp.pch
+//  QuizBeta
+//
+//  Created by Lakshmi Narasimma KG on 01/01/16.
+//  Copyright © 2016 Lakshmi Narasimma KG. All rights reserved.
+//
+
+#ifndef QuizApp_pch
+#define QuizApp_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define FILE_VERSION @"fileVersion"
+#define QUESTIONS_FILE_NAME @"Questions.json"
+
+#endif /* QuizApp_pch */
