@@ -16,7 +16,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *questionStemLbl;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *optionBtns;
-@property (strong, nonatomic) IBOutlet UILabel *resultLbl;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *nextBarButtonItemLbl;
 
 @property (strong, nonatomic) Question *q; // to store the current question displayed
@@ -39,18 +38,7 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"topic = %@",self.topic];
     request.predicate = predicate;
     NSArray *ques = [self.context executeFetchRequest:request error:&error];
-//    for (Question *q in ques) {
-//        NSLog(@"Question : %@",q.stem);
-//        NSLog(@"Topic : %@",q.topic);
-//        NSLog(@"No of Options : %lu",q.answers.count);
-//        for (Answer *a in q.answers) {
-//            NSLog(@"Option : %@",a.answerOption);
-//            NSLog(@"isCorrect : %@",a.correctAnswer);
-//        }
-//    }
     self.questionList = [ques mutableCopy];
-//    NSLog(@"%lu",[self.questionList count]);
-
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -60,7 +48,7 @@
 
 - (void)populateUI {
     [self populateBarButtonText];
-    self.resultLbl.text = @"";
+    [self setOptionButtonsReadOnly:YES];
     int randNum = arc4random_uniform((int)[self.questionList count]);
     if ([self.questionList count] > 0) {
         self.q = self.questionList[randNum];
@@ -77,6 +65,10 @@
             button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
             button.titleLabel.numberOfLines = 3;
             button.tag = i;
+            [button setBackgroundColor:[UIColor colorWithRed:155.0/255.0
+                                                       green:252.0/255.0
+                                                        blue:247.0/255.0
+                                                       alpha:1.0]];
             i++;
         }
         [self.questionList removeObjectAtIndex:randNum];
@@ -112,11 +104,26 @@
     if ([sender isKindOfClass:[UIButton class]]) {
         NSUInteger index = [self.correctAnsList indexOfObject:@1];
         if (sender.tag == index) {
-            self.resultLbl.text = @"Correct!!";
+            [sender setBackgroundColor:[UIColor colorWithRed:5.0/255.0
+                                                       green:198.0/255.0
+                                                        blue:92.0/255.0
+                                                       alpha:1.0]];
+            [self setOptionButtonsReadOnly : NO];
         } else {
-            self.resultLbl.text = @"Sorry..Try Again!!";
+            [sender setBackgroundColor:[UIColor colorWithRed:198.0/255.0
+                                                       green:5.0/255.0
+                                                        blue:14.0/255.0
+                                                       alpha:1.0]];
+            [self setOptionButtonsReadOnly : NO];
         }
     }
     
 }
+
+- (void) setOptionButtonsReadOnly : (BOOL) value {
+    for (UIButton *button in self.optionBtns) {
+        button.enabled = value;
+    }
+}
+
 @end

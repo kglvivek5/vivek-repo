@@ -37,6 +37,7 @@
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = app.managedObjectContext;
     [self getDataForQuestionsTableViewInContext];
+    self.tableView.separatorColor = [UIColor clearColor];
     
 }
 
@@ -66,7 +67,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     cell.textLabel.text = self.topics[indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",self.topics[indexPath.row]]];
     return cell;
+}
+
+- (void) viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
 }
 
 

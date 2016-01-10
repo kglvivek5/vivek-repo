@@ -10,6 +10,7 @@
 #import "Question+CoreDataProperties.h"
 #import "Answer+CoreDataProperties.h"
 #import "HelperMethods.h"
+#import "Reachability.h"
 
 @interface SettingsViewController ()
 
@@ -43,8 +44,18 @@
 */
 
 - (IBAction)updateFileBtnPressed:(UIButton *)sender {
-    NSURL *dataURL = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/rt7cfry8m1od18d/Questions.json?dl=0"];
-    [self getJSONDataAtURL:dataURL];
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus netStatus = [networkReachability currentReachabilityStatus];
+    if (netStatus == NotReachable) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Network Unavailable" message:@"Internet connection is not available, data update failed" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:alertAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+    } else {
+        NSURL *dataURL = [NSURL URLWithString:@"https://dl.dropboxusercontent.com/s/rt7cfry8m1od18d/Questions.json?dl=0"];
+        [self getJSONDataAtURL:dataURL];
+    }
+    
 }
 
 - (void) getJSONDataAtURL: (NSURL *) urlWithJSON {
