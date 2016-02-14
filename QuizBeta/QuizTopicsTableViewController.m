@@ -37,7 +37,6 @@
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = app.managedObjectContext;
     [self getDataForQuestionsTableViewInContext];
-    self.tableView.separatorColor = [UIColor clearColor];
     
 }
 

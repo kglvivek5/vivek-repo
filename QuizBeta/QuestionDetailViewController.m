@@ -25,6 +25,9 @@
 - (IBAction)nextButtonPressed:(UIBarButtonItem *)sender;
 - (IBAction)answerOptionTapped:(UIButton *)sender;
 
+@property (nonatomic) int secondsLeft;
+@property (strong, nonatomic) NSTimer *timer;
+
 @end
 
 @implementation QuestionDetailViewController
@@ -48,7 +51,7 @@
 
 - (void)populateUI {
     [self populateBarButtonText];
-    [self setOptionButtonsReadOnly:YES];
+    [self setOptionButtonsReadOnlyWithBoolValue:YES];
     int randNum = arc4random_uniform((int)[self.questionList count]);
     if ([self.questionList count] > 0) {
         self.q = self.questionList[randNum];
@@ -75,7 +78,29 @@
     } else {
         [self.navigationController popViewControllerAnimated:YES];
     }
+    self.secondsLeft = 30;
+    if ([self.timer isValid]) {
+        [self.timer invalidate];
+    }
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                  target:self
+                                                selector:@selector(updateTimer)
+                                                userInfo:nil
+                                                 repeats:YES];
 
+}
+
+- (void)updateTimer {
+    int seconds;
+    seconds = self.secondsLeft % 60;
+    if (seconds == 0) {
+        [self setOptionButtonsReadOnlyWithBoolValue:NO];
+        [self.timer invalidate];
+    }
+    NSString *timeMessage = [NSString stringWithFormat:@"Time left : %02d seconds",seconds];
+    self.navigationItem.title = timeMessage;
+    self.secondsLeft--;
+    
 }
 
 - (void)populateBarButtonText {
@@ -108,19 +133,19 @@
                                                        green:198.0/255.0
                                                         blue:92.0/255.0
                                                        alpha:1.0]];
-            [self setOptionButtonsReadOnly : NO];
+            [self setOptionButtonsReadOnlyWithBoolValue : NO];
         } else {
             [sender setBackgroundColor:[UIColor colorWithRed:198.0/255.0
                                                        green:5.0/255.0
                                                         blue:14.0/255.0
                                                        alpha:1.0]];
-            [self setOptionButtonsReadOnly : NO];
+            [self setOptionButtonsReadOnlyWithBoolValue : NO];
         }
     }
     
 }
 
-- (void) setOptionButtonsReadOnly : (BOOL) value {
+- (void) setOptionButtonsReadOnlyWithBoolValue : (BOOL) value {
     for (UIButton *button in self.optionBtns) {
         button.enabled = value;
     }
