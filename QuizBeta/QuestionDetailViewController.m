@@ -9,6 +9,7 @@
 #import "QuestionDetailViewController.h"
 #import "Question+CoreDataProperties.h"
 #import "Answer+CoreDataProperties.h"
+#import "ScoreDisplayViewController.h"
 
 @interface QuestionDetailViewController ()
 
@@ -28,6 +29,8 @@
 @property (nonatomic) int secondsLeft;
 @property (strong, nonatomic) NSTimer *timer;
 
+@property (nonatomic) int score; // to store the score
+
 @end
 
 @implementation QuestionDetailViewController
@@ -42,6 +45,7 @@
     request.predicate = predicate;
     NSArray *ques = [self.context executeFetchRequest:request error:&error];
     self.questionList = [ques mutableCopy];
+    self.score = 0;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -76,7 +80,8 @@
         }
         [self.questionList removeObjectAtIndex:randNum];
     } else {
-        [self.navigationController popViewControllerAnimated:YES];
+//        [self.navigationController popViewControllerAnimated:YES];
+        [self performSegueWithIdentifier:@"displayScore" sender:self];
     }
     self.secondsLeft = 30;
     if ([self.timer isValid]) {
@@ -88,6 +93,13 @@
                                                 userInfo:nil
                                                  repeats:YES];
 
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"displayScore"] && [segue.destinationViewController isKindOfClass:[ScoreDisplayViewController class]]) {
+        ScoreDisplayViewController *scoreVC = segue.destinationViewController;
+        scoreVC.finalScore = self.score;
+    }
 }
 
 - (void)updateTimer {
@@ -111,16 +123,6 @@
     }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)nextButtonPressed:(UIBarButtonItem *)sender {
     [self populateUI];
 }
@@ -134,6 +136,7 @@
                                                         blue:92.0/255.0
                                                        alpha:1.0]];
             [self setOptionButtonsReadOnlyWithBoolValue : NO];
+            self.score += 10;
         } else {
             [sender setBackgroundColor:[UIColor colorWithRed:198.0/255.0
                                                        green:5.0/255.0

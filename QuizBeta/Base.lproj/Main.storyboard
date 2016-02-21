@@ -45,7 +45,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tB-M0-dSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998" y="-280"/>
+            <point key="canvasLocation" x="998" y="-279.99999999999989"/>
         </scene>
         <!--Question Detail View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -141,11 +141,61 @@
                         <outletCollection property="optionBtns" destination="bAg-fk-3rJ" id="czs-YK-bwr"/>
                         <outletCollection property="optionBtns" destination="K1Z-4I-bM3" id="8pr-Zz-c4B"/>
                         <outletCollection property="optionBtns" destination="PTb-nw-pH0" id="zIW-8g-z0g"/>
+                        <segue destination="XxN-Ev-FdE" kind="modal" identifier="displayScore" modalTransitionStyle="flipHorizontal" id="dQJ-5k-dFs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998" y="375"/>
+            <point key="canvasLocation" x="998" y="374.99999999999989"/>
+        </scene>
+        <!--Score Display View Controller-->
+        <scene sceneID="qQ5-xs-Ckw">
+            <objects>
+                <viewController id="XxN-Ev-FdE" customClass="ScoreDisplayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ra5-ET-bKs"/>
+                        <viewControllerLayoutGuide type="bottom" id="poh-fX-CUg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R2w-6s-Qbi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94j-WD-Uje">
+                                <rect key="frame" x="16" y="28" width="288" height="198"/>
+                                <color key="backgroundColor" red="0.97591751609999999" green="0.89895300170000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="198" id="1jX-r6-kkm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3I-4K-LiM">
+                                <rect key="frame" x="107" y="269" width="105" height="30"/>
+                                <state key="normal" title="Topic Selection"/>
+                                <connections>
+                                    <action selector="topicSelectionTapped:" destination="XxN-Ev-FdE" eventType="touchUpInside" id="J7J-bF-87m"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J3I-4K-LiM" firstAttribute="centerY" secondItem="R2w-6s-Qbi" secondAttribute="centerY" id="HUm-zZ-XKG"/>
+                            <constraint firstItem="J3I-4K-LiM" firstAttribute="centerX" secondItem="R2w-6s-Qbi" secondAttribute="centerX" id="UZh-Pk-rC4"/>
+                            <constraint firstItem="94j-WD-Uje" firstAttribute="centerX" secondItem="J3I-4K-LiM" secondAttribute="centerX" id="gWC-W1-RE7"/>
+                            <constraint firstItem="94j-WD-Uje" firstAttribute="leading" secondItem="R2w-6s-Qbi" secondAttribute="leadingMargin" id="tSq-41-3fo"/>
+                            <constraint firstItem="94j-WD-Uje" firstAttribute="top" secondItem="ra5-ET-bKs" secondAttribute="bottom" constant="8" symbolic="YES" id="vVd-dF-IdU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Sct-Rx-8Cf"/>
+                    <connections>
+                        <outlet property="scoreDisplayLabel" destination="94j-WD-Uje" id="ZY7-hj-5uP"/>
+                        <segue destination="lKW-Ug-Htv" kind="modal" identifier="displayHome" id="o4S-Yp-GMy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gtt-cQ-1d0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1420" y="374"/>
         </scene>
         <!--Tech Quiz-->
         <scene sceneID="O1E-co-NRa">
@@ -183,13 +233,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLM-t0-Vcq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="560" y="375"/>
+            <point key="canvasLocation" x="560" y="374.99999999999989"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u7g-Ai-auO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lKW-Ug-Htv" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="hZ0-jx-mQB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nyt-f8-gfX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -201,7 +252,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BH7-wF-9re" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28" y="375"/>
+            <point key="canvasLocation" x="28" y="374.99999999999989"/>
         </scene>
     </scenes>
 </document>

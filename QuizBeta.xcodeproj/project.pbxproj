@@ -26,6 +26,7 @@
 		1BEE36EF1C37A9F700CB6B34 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BEE36EE1C37A9F700CB6B34 /* SystemConfiguration.framework */; };
 		1BEEE7801C2F9B93002BB05B /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BEEE77F1C2F9B93002BB05B /* SettingsViewController.m */; };
 		1BF157401C35374600559B36 /* HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF1573F1C35374600559B36 /* HelperMethods.m */; };
+		1BF518801C78BDBF00066F94 /* ScoreDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF5187F1C78BDBF00066F94 /* ScoreDisplayViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		1BEEE77F1C2F9B93002BB05B /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		1BF1573E1C35374600559B36 /* HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperMethods.h; sourceTree = "<group>"; };
 		1BF1573F1C35374600559B36 /* HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperMethods.m; sourceTree = "<group>"; };
+		1BF5187E1C78BDBF00066F94 /* ScoreDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreDisplayViewController.h; sourceTree = "<group>"; };
+		1BF5187F1C78BDBF00066F94 /* ScoreDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreDisplayViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,8 @@
 				1B2358411C0B085600FCC6A5 /* AppDelegate.h */,
 				1B2358421C0B085600FCC6A5 /* AppDelegate.m */,
 				1B2358471C0B085600FCC6A5 /* Main.storyboard */,
+				1BF5187E1C78BDBF00066F94 /* ScoreDisplayViewController.h */,
+				1BF5187F1C78BDBF00066F94 /* ScoreDisplayViewController.m */,
 				1BEEE77E1C2F9B93002BB05B /* SettingsViewController.h */,
 				1BEEE77F1C2F9B93002BB05B /* SettingsViewController.m */,
 				1BE3128A1C259A5D00C46A5A /* QuestionDetailViewController.h */,
@@ -335,6 +340,7 @@
 				1B2358401C0B085600FCC6A5 /* main.m in Sources */,
 				1BEE36ED1C37A9C300CB6B34 /* Reachability.m in Sources */,
 				1B2358AC1C0B0F5B00FCC6A5 /* Answer+CoreDataProperties.m in Sources */,
+				1BF518801C78BDBF00066F94 /* ScoreDisplayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
