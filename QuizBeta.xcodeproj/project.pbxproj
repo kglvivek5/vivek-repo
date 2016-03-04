@@ -22,6 +22,7 @@
 		1BACE86C1C18728400BD9B69 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 1BACE86B1C18728400BD9B69 /* Data */; };
 		1BE3128C1C259A5D00C46A5A /* QuestionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE3128B1C259A5D00C46A5A /* QuestionDetailViewController.m */; };
 		1BE762071C2536CE0083E652 /* QuizTopicsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE762061C2536CE0083E652 /* QuizTopicsTableViewController.m */; };
+		1BE77D431C834A54008C9260 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BE77D421C834A54008C9260 /* Social.framework */; };
 		1BEE36ED1C37A9C300CB6B34 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BEE36EC1C37A9C300CB6B34 /* Reachability.m */; };
 		1BEE36EF1C37A9F700CB6B34 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BEE36EE1C37A9F700CB6B34 /* SystemConfiguration.framework */; };
 		1BEEE7801C2F9B93002BB05B /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BEEE77F1C2F9B93002BB05B /* SettingsViewController.m */; };
@@ -75,6 +76,7 @@
 		1BE3128B1C259A5D00C46A5A /* QuestionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionDetailViewController.m; sourceTree = "<group>"; };
 		1BE762051C2536CE0083E652 /* QuizTopicsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizTopicsTableViewController.h; sourceTree = "<group>"; };
 		1BE762061C2536CE0083E652 /* QuizTopicsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizTopicsTableViewController.m; sourceTree = "<group>"; };
+		1BE77D421C834A54008C9260 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		1BE841021C3671BA00C7340A /* QuizApp.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuizApp.pch; sourceTree = "<group>"; };
 		1BEE36EB1C37A9C300CB6B34 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		1BEE36EC1C37A9C300CB6B34 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BE77D431C834A54008C9260 /* Social.framework in Frameworks */,
 				1BEE36EF1C37A9F700CB6B34 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,6 +119,7 @@
 		1B2358321C0B085600FCC6A5 = {
 			isa = PBXGroup;
 			children = (
+				1BE77D421C834A54008C9260 /* Social.framework */,
 				1BEE36EE1C37A9F700CB6B34 /* SystemConfiguration.framework */,
 				1B23583D1C0B085600FCC6A5 /* QuizBeta */,
 				1B23585A1C0B085600FCC6A5 /* QuizBetaTests */,

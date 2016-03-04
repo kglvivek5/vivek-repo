@@ -177,14 +177,23 @@
                                     <action selector="topicSelectionTapped:" destination="XxN-Ev-FdE" eventType="touchUpInside" id="J7J-bF-87m"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyl-1c-Rdk">
+                                <rect key="frame" x="140" y="321" width="40" height="30"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareOptions:" destination="XxN-Ev-FdE" eventType="touchUpInside" id="BvU-eR-Fp4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Pyl-1c-Rdk" firstAttribute="top" secondItem="J3I-4K-LiM" secondAttribute="bottom" constant="22" id="2Y8-Xh-28J"/>
                             <constraint firstItem="J3I-4K-LiM" firstAttribute="centerY" secondItem="R2w-6s-Qbi" secondAttribute="centerY" id="HUm-zZ-XKG"/>
                             <constraint firstItem="J3I-4K-LiM" firstAttribute="centerX" secondItem="R2w-6s-Qbi" secondAttribute="centerX" id="UZh-Pk-rC4"/>
                             <constraint firstItem="94j-WD-Uje" firstAttribute="centerX" secondItem="J3I-4K-LiM" secondAttribute="centerX" id="gWC-W1-RE7"/>
                             <constraint firstItem="94j-WD-Uje" firstAttribute="leading" secondItem="R2w-6s-Qbi" secondAttribute="leadingMargin" id="tSq-41-3fo"/>
                             <constraint firstItem="94j-WD-Uje" firstAttribute="top" secondItem="ra5-ET-bKs" secondAttribute="bottom" constant="8" symbolic="YES" id="vVd-dF-IdU"/>
+                            <constraint firstItem="Pyl-1c-Rdk" firstAttribute="centerX" secondItem="J3I-4K-LiM" secondAttribute="centerX" id="vcL-kw-E4J"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Sct-Rx-8Cf"/>
