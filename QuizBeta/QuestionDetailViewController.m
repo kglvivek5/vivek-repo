@@ -31,6 +31,12 @@
 
 @property (nonatomic) int score; // to store the score
 
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *option1Height;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *option2Height;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *option3Height;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *option4Height;
+
+
 @end
 
 @implementation QuestionDetailViewController
@@ -53,6 +59,31 @@
     [self populateUI];
 }
 
+-(void)updateViewConstraints {
+    [super updateViewConstraints];
+    if ([UIScreen mainScreen].bounds.size.height == 736.0f) {
+        self.option1Height.constant = 100;
+        self.option2Height.constant = 100;
+        self.option3Height.constant = 100;
+        self.option4Height.constant = 100;
+    } else if ([UIScreen mainScreen].bounds.size.height == 667.0f) {
+        self.option1Height.constant = 100;
+        self.option2Height.constant = 100;
+        self.option3Height.constant = 100;
+        self.option4Height.constant = 100;
+    } else if ([UIScreen mainScreen].bounds.size.height == 480.0f) {
+        self.option1Height.constant = 60;
+        self.option2Height.constant = 60;
+        self.option3Height.constant = 60;
+        self.option4Height.constant = 60;
+    } else {
+        self.option1Height.constant = 75;
+        self.option2Height.constant = 75;
+        self.option3Height.constant = 75;
+        self.option4Height.constant = 75;
+    }
+}
+
 - (void)populateUI {
     [self populateBarButtonText];
     [self setOptionButtonsReadOnlyWithBoolValue:YES];
@@ -71,6 +102,7 @@
             [button setTitle:self.ansList[i] forState:UIControlStateNormal];
             button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
             button.titleLabel.numberOfLines = 3;
+            [button.titleLabel setTextAlignment:NSTextAlignmentCenter];
             button.tag = i;
             [button setBackgroundColor:[UIColor colorWithRed:155.0/255.0
                                                        green:252.0/255.0
@@ -80,7 +112,6 @@
         }
         [self.questionList removeObjectAtIndex:randNum];
     } else {
-//        [self.navigationController popViewControllerAnimated:YES];
         [self performSegueWithIdentifier:@"displayScore" sender:self];
     }
     self.secondsLeft = 30;
