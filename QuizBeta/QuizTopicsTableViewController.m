@@ -12,6 +12,7 @@
 #import "Answer+CoreDataProperties.h"
 #import "QuestionDetailViewController.h"
 #import "SettingsViewController.h"
+#import "NumberPickerViewController.h"
 
 
 @interface QuizTopicsTableViewController ()
@@ -122,6 +123,11 @@
     } else if ([segue.destinationViewController isKindOfClass:[SettingsViewController class]]) {
         SettingsViewController *svc = segue.destinationViewController;
         svc.context = self.managedObjectContext;
+    } else if ([segue.destinationViewController isKindOfClass:[NumberPickerViewController class]]) {
+        NumberPickerViewController *nvc = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        nvc.topic = self.topics[indexPath.row];
+        nvc.context = self.managedObjectContext;
     }
     
 }

@@ -60,18 +60,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="V4h-RO-lYI">
-                                <rect key="frame" x="20" y="72" width="560" height="518"/>
+                                <rect key="frame" x="20" y="69" width="560" height="526"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixh-Du-OC3">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="198"/>
-                                        <color key="backgroundColor" red="0.888691246509552" green="0.95512682199478149" blue="0.8389398455619812" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="206"/>
+                                        <color key="backgroundColor" red="0.92053520679473877" green="0.60244888067245483" blue="0.22930723428726196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQE-P9-7m5">
-                                        <rect key="frame" x="0.0" y="203" width="560" height="75"/>
-                                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="260" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQE-P9-7m5">
+                                        <rect key="frame" x="0.0" y="211" width="560" height="75"/>
+                                        <color key="backgroundColor" red="0.0083896173164248466" green="0.86985093355178833" blue="0.99223977327346802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="12B-J3-CND"/>
                                         </constraints>
@@ -80,9 +80,9 @@
                                             <action selector="answerOptionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JML-Us-K8G"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTb-nw-pH0">
-                                        <rect key="frame" x="0.0" y="283" width="560" height="75"/>
-                                        <color key="backgroundColor" red="0.57466517841822395" green="1" blue="0.99398801153348448" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="260" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTb-nw-pH0">
+                                        <rect key="frame" x="0.0" y="291" width="560" height="75"/>
+                                        <color key="backgroundColor" red="0.0083896173164248466" green="0.86985093355178833" blue="0.99223977327346802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="ya2-Oc-vVd"/>
                                         </constraints>
@@ -91,9 +91,9 @@
                                             <action selector="answerOptionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gjz-Qd-cTy"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1Z-4I-bM3">
-                                        <rect key="frame" x="0.0" y="363" width="560" height="75"/>
-                                        <color key="backgroundColor" red="0.46506951187519385" green="1" blue="0.93912264499690801" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="260" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1Z-4I-bM3">
+                                        <rect key="frame" x="0.0" y="371" width="560" height="75"/>
+                                        <color key="backgroundColor" red="0.0083896173164248466" green="0.86985093355178833" blue="0.99223977327346802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="oOP-mz-aBp"/>
                                         </constraints>
@@ -102,9 +102,9 @@
                                             <action selector="answerOptionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9w0-B7-Aup"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAg-fk-3rJ">
-                                        <rect key="frame" x="0.0" y="443" width="560" height="75"/>
-                                        <color key="backgroundColor" red="0.30067927589793275" green="1" blue="0.95455071578264472" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="260" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAg-fk-3rJ">
+                                        <rect key="frame" x="0.0" y="451" width="560" height="75"/>
+                                        <color key="backgroundColor" red="0.0083896173164248466" green="0.86985093355178833" blue="0.99223977327346802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="JgL-eO-m6d"/>
                                         </constraints>
@@ -116,10 +116,10 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92398059368133545" green="0.97672945261001587" blue="0.97693413496017456" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="V4h-RO-lYI" secondAttribute="bottom" constant="10" id="Ep9-cM-REw"/>
-                            <constraint firstItem="V4h-RO-lYI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="LRY-48-sa0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="V4h-RO-lYI" secondAttribute="bottom" constant="5" id="Ep9-cM-REw"/>
+                            <constraint firstItem="V4h-RO-lYI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="LRY-48-sa0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="V4h-RO-lYI" secondAttribute="trailing" id="wL6-2B-4IX"/>
                             <constraint firstItem="V4h-RO-lYI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yES-SX-Sw2"/>
                         </constraints>
@@ -134,10 +134,6 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="nextBarButtonItemLbl" destination="xiw-b4-g7v" id="5BI-uC-JoJ"/>
-                        <outlet property="option1Height" destination="12B-J3-CND" id="MFJ-bu-W1V"/>
-                        <outlet property="option2Height" destination="ya2-Oc-vVd" id="5PP-Cb-n6g"/>
-                        <outlet property="option3Height" destination="oOP-mz-aBp" id="w87-eB-hqC"/>
-                        <outlet property="option4Height" destination="JgL-eO-m6d" id="HE6-Ym-fYe"/>
                         <outlet property="questionStemLbl" destination="Ixh-Du-OC3" id="0s9-I2-ujJ"/>
                         <outletCollection property="optionBtns" destination="wQE-P9-7m5" id="i7h-ZK-8d9"/>
                         <outletCollection property="optionBtns" destination="PTb-nw-pH0" id="zIW-8g-z0g"/>
@@ -149,6 +145,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1871" y="396"/>
+        </scene>
+        <!--Number Picker View Controller-->
+        <scene sceneID="9At-xu-EP5">
+            <objects>
+                <viewController id="FDb-9r-83a" customClass="NumberPickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kXJ-i6-WrZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Nx-Qx-fmk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oLN-rW-Vcy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRy-X1-aGM">
+                                <rect key="frame" x="0.0" y="192" width="600" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="FDb-9r-83a" id="KkQ-WQ-j84"/>
+                                    <outlet property="delegate" destination="FDb-9r-83a" id="3kW-tu-Gh7"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nct-0L-Vea">
+                                <rect key="frame" x="271" y="428" width="59" height="30"/>
+                                <color key="backgroundColor" red="0.86263781785964966" green="0.90817791223526001" blue="0.38313382863998413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="2cN-qs-vg9"/>
+                                </constraints>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="" id="hyc-Lh-ERP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many questions do you want to answer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVa-RG-ZnF">
+                                <rect key="frame" x="153" y="98" width="295" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="295" id="SrS-pg-EKz"/>
+                                    <constraint firstAttribute="height" constant="69" id="bLB-3B-uVZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EVa-RG-ZnF" firstAttribute="centerX" secondItem="FRy-X1-aGM" secondAttribute="centerX" id="12w-Ki-MIW"/>
+                            <constraint firstItem="nct-0L-Vea" firstAttribute="centerX" secondItem="FRy-X1-aGM" secondAttribute="centerX" id="7JA-FD-Yqi"/>
+                            <constraint firstItem="FRy-X1-aGM" firstAttribute="centerX" secondItem="oLN-rW-Vcy" secondAttribute="centerX" id="8sG-Q1-TK8"/>
+                            <constraint firstItem="FRy-X1-aGM" firstAttribute="top" secondItem="EVa-RG-ZnF" secondAttribute="bottom" constant="25" id="Knk-qz-2lE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FRy-X1-aGM" secondAttribute="trailing" constant="-20" id="Pee-Xu-PNL"/>
+                            <constraint firstItem="FRy-X1-aGM" firstAttribute="leading" secondItem="oLN-rW-Vcy" secondAttribute="leadingMargin" constant="-20" id="ipz-Ve-W5V"/>
+                            <constraint firstItem="nct-0L-Vea" firstAttribute="top" secondItem="FRy-X1-aGM" secondAttribute="bottom" constant="20" id="usc-Pw-HqN"/>
+                            <constraint firstItem="FRy-X1-aGM" firstAttribute="centerY" secondItem="oLN-rW-Vcy" secondAttribute="centerY" id="xzA-ju-YFZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="picker" destination="FRy-X1-aGM" id="wo7-vK-uYg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d6j-sI-s1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1198" y="1299"/>
         </scene>
         <!--Score Display View Controller-->
         <scene sceneID="qQ5-xs-Ckw">
@@ -164,7 +221,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94j-WD-Uje">
                                 <rect key="frame" x="20" y="28" width="560" height="198"/>
-                                <color key="backgroundColor" red="0.97591751609999999" green="0.89895300170000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.55589067935943604" green="0.91646856069564819" blue="0.81891900300979614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="198" id="1jX-r6-kkm"/>
                                 </constraints>
@@ -225,7 +282,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="0Nr-ZP-pqi"/>
+                                    <segue destination="FDb-9r-83a" kind="show" identifier="toPickerSegue" id="DyT-GR-CX8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

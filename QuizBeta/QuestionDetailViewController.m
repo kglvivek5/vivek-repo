@@ -29,7 +29,7 @@
 @property (nonatomic) int secondsLeft;
 @property (strong, nonatomic) NSTimer *timer;
 
-@property (nonatomic) int score; // to store the score
+@property (nonatomic) NSInteger score; // to store the score
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *option1Height;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *option2Height;
@@ -49,6 +49,7 @@
     request.sortDescriptors = @[sort];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"topic = %@",self.topic];
     request.predicate = predicate;
+    request.fetchLimit = self.qCount;
     NSArray *ques = [self.context executeFetchRequest:request error:&error];
     self.questionList = [ques mutableCopy];
     self.score = 0;
@@ -62,20 +63,20 @@
 -(void)updateViewConstraints {
     [super updateViewConstraints];
     if ([UIScreen mainScreen].bounds.size.height == 736.0f) {
-        self.option1Height.constant = 100;
-        self.option2Height.constant = 100;
-        self.option3Height.constant = 100;
-        self.option4Height.constant = 100;
+        self.option1Height.constant = 120;
+        self.option2Height.constant = 120;
+        self.option3Height.constant = 120;
+        self.option4Height.constant = 120;
     } else if ([UIScreen mainScreen].bounds.size.height == 667.0f) {
-        self.option1Height.constant = 100;
-        self.option2Height.constant = 100;
-        self.option3Height.constant = 100;
-        self.option4Height.constant = 100;
+        self.option1Height.constant = 110;
+        self.option2Height.constant = 110;
+        self.option3Height.constant = 110;
+        self.option4Height.constant = 110;
     } else if ([UIScreen mainScreen].bounds.size.height == 480.0f) {
-        self.option1Height.constant = 60;
-        self.option2Height.constant = 60;
-        self.option3Height.constant = 60;
-        self.option4Height.constant = 60;
+        self.option1Height.constant = 50;
+        self.option2Height.constant = 50;
+        self.option3Height.constant = 50;
+        self.option4Height.constant = 50;
     } else {
         self.option1Height.constant = 75;
         self.option2Height.constant = 75;
@@ -130,6 +131,7 @@
     if ([segue.identifier isEqualToString:@"displayScore"] && [segue.destinationViewController isKindOfClass:[ScoreDisplayViewController class]]) {
         ScoreDisplayViewController *scoreVC = segue.destinationViewController;
         scoreVC.finalScore = self.score;
+        scoreVC.totalQuestions = self.qCount;
     }
 }
 
@@ -167,7 +169,7 @@
                                                         blue:92.0/255.0
                                                        alpha:1.0]];
             [self setOptionButtonsReadOnlyWithBoolValue : NO];
-            self.score += 10;
+            self.score += 1;
         } else {
             [sender setBackgroundColor:[UIColor colorWithRed:198.0/255.0
                                                        green:5.0/255.0

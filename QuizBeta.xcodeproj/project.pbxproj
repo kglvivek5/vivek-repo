@@ -27,6 +27,7 @@
 		1BEE36EF1C37A9F700CB6B34 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BEE36EE1C37A9F700CB6B34 /* SystemConfiguration.framework */; };
 		1BEEE7801C2F9B93002BB05B /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BEEE77F1C2F9B93002BB05B /* SettingsViewController.m */; };
 		1BF157401C35374600559B36 /* HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF1573F1C35374600559B36 /* HelperMethods.m */; };
+		1BF372BA1C899C7600DE60EC /* NumberPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF372B91C899C7600DE60EC /* NumberPickerViewController.m */; };
 		1BF518801C78BDBF00066F94 /* ScoreDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF5187F1C78BDBF00066F94 /* ScoreDisplayViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,8 @@
 		1BEEE77F1C2F9B93002BB05B /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		1BF1573E1C35374600559B36 /* HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperMethods.h; sourceTree = "<group>"; };
 		1BF1573F1C35374600559B36 /* HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperMethods.m; sourceTree = "<group>"; };
+		1BF372B81C899C7600DE60EC /* NumberPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberPickerViewController.h; sourceTree = "<group>"; };
+		1BF372B91C899C7600DE60EC /* NumberPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberPickerViewController.m; sourceTree = "<group>"; };
 		1BF5187E1C78BDBF00066F94 /* ScoreDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreDisplayViewController.h; sourceTree = "<group>"; };
 		1BF5187F1C78BDBF00066F94 /* ScoreDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreDisplayViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +158,8 @@
 				1B2358411C0B085600FCC6A5 /* AppDelegate.h */,
 				1B2358421C0B085600FCC6A5 /* AppDelegate.m */,
 				1B2358471C0B085600FCC6A5 /* Main.storyboard */,
+				1BF372B81C899C7600DE60EC /* NumberPickerViewController.h */,
+				1BF372B91C899C7600DE60EC /* NumberPickerViewController.m */,
 				1BF5187E1C78BDBF00066F94 /* ScoreDisplayViewController.h */,
 				1BF5187F1C78BDBF00066F94 /* ScoreDisplayViewController.m */,
 				1BEEE77E1C2F9B93002BB05B /* SettingsViewController.h */,
@@ -337,6 +342,7 @@
 				1B2358AD1C0B0F5B00FCC6A5 /* Answer.m in Sources */,
 				1B2358431C0B085600FCC6A5 /* AppDelegate.m in Sources */,
 				1B23584C1C0B085600FCC6A5 /* QuizBeta.xcdatamodeld in Sources */,
+				1BF372BA1C899C7600DE60EC /* NumberPickerViewController.m in Sources */,
 				1B2358AE1C0B0F5B00FCC6A5 /* Question+CoreDataProperties.m in Sources */,
 				1BE762071C2536CE0083E652 /* QuizTopicsTableViewController.m in Sources */,
 				1B2358AF1C0B0F5B00FCC6A5 /* Question.m in Sources */,

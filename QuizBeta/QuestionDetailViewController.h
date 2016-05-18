@@ -14,4 +14,6 @@
 
 @property (strong, nonatomic) NSString *topic;
 
+@property (nonatomic) NSInteger qCount;
+
 @end

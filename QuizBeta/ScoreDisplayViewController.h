@@ -10,6 +10,7 @@
 
 @interface ScoreDisplayViewController : UIViewController
 
-@property (nonatomic) int finalScore;
+@property (nonatomic) NSInteger finalScore;
+@property (nonatomic) NSInteger totalQuestions;
 
 @end

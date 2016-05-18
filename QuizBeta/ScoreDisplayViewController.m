@@ -18,6 +18,8 @@
 
 - (IBAction)shareOptions:(UIButton *)sender;
 
+@property (nonatomic) float scorePercentage;
+
 @end
 
 @implementation ScoreDisplayViewController
@@ -36,7 +38,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.scoreDisplayLabel setText:[NSString stringWithFormat:@"Congrats..!! Your Score is %i",self.finalScore]];
+    self.scorePercentage = 100.0f * self.finalScore / self.totalQuestions;
+    [self.scoreDisplayLabel setText:[NSString stringWithFormat:@"Congrats..!! Your Score is %0.2f %%",self.scorePercentage]];
 }
 
 
@@ -50,13 +53,31 @@
         // do nothing;
     }]];
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Facebook" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        // share to Facebook
+        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+            SLComposeViewController *fbpost = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+            [fbpost setInitialText:[NSString stringWithFormat:@"Hey there..I was %0.2f %% correct in tech quiz",self.scorePercentage]];
+            [self presentViewController:fbpost animated:YES completion:nil];
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"You are not logged onto Facebook" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                // do nothing
+            }];
+            [alert addAction:action];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
     }]];
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Twitter" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
-            
+            SLComposeViewController *tweet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+            [tweet setInitialText:[NSString stringWithFormat:@"Hey there..I was %0.2f %% correct in tech quiz..",self.scorePercentage]];
+            [self presentViewController:tweet animated:YES completion:nil];
         } else {
-            NSLog(@"Twitter account is not available in your phone");
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"You are not logged onto Twitter" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                // do nothing
+            }];
+            [alert addAction:action];
+            [self presentViewController:alert animated:YES completion:nil];
         }
     }]];
     [self presentViewController:actionSheet animated:YES completion:nil];
