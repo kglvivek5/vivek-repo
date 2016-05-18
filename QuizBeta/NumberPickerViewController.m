@@ -10,6 +10,8 @@
 #import "QuestionDetailViewController.h"
 #import "Question+CoreDataProperties.h"
 #import "Answer+CoreDataProperties.h"
+#import <HTPressableButton.h>
+#import <UIColor+HTColor.h>
 
 @interface NumberPickerViewController ()
 
@@ -33,11 +35,36 @@
     NSArray *ques = [self.context executeFetchRequest:request error:&error];
     self.qCount = [ques count];
     
+    CGRect frame = CGRectMake(30, 450, 260, 50);
+    HTPressableButton *customButton = [[HTPressableButton alloc] initWithFrame:frame buttonStyle:HTPressableButtonStyleRounded];
+    [customButton setTitle:@"Start" forState:UIControlStateNormal];
+    customButton.buttonColor = [UIColor ht_midnightBlueColor];
+    customButton.shadowColor = [UIColor ht_belizeHoleColor];
+    [self.view addSubview:customButton];
+    customButton.translatesAutoresizingMaskIntoConstraints = NO;
+    NSDictionary *viewDict = @{@"buttonView":customButton,@"pickerView":self.picker};
+    NSArray *pos_V = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[pickerView]-40-[buttonView]" options:0 metrics:nil views:viewDict];
+    [self.view addConstraint:[NSLayoutConstraint
+                              constraintWithItem:customButton
+                              attribute:NSLayoutAttributeCenterX
+                              relatedBy:NSLayoutRelationEqual
+                              toItem:self.picker
+                              attribute:NSLayoutAttributeCenterX
+                              multiplier:1
+                              constant:1]];
+    [self.view addConstraints:pos_V];
+    [customButton addTarget:self action:@selector(buttonClicked) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// Function to handle the button click for the custom button
+
+- (void)buttonClicked {
+    [self performSegueWithIdentifier:@"toQuestionDetail" sender:self];
 }
 
 #pragma mark - UIPicker Datasource methods

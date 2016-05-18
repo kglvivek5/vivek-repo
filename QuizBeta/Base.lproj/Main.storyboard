@@ -165,17 +165,6 @@
                                     <outlet property="delegate" destination="FDb-9r-83a" id="3kW-tu-Gh7"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nct-0L-Vea">
-                                <rect key="frame" x="271" y="428" width="59" height="30"/>
-                                <color key="backgroundColor" red="0.86263781785964966" green="0.90817791223526001" blue="0.38313382863998413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="59" id="2cN-qs-vg9"/>
-                                </constraints>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="" id="hyc-Lh-ERP"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many questions do you want to answer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVa-RG-ZnF">
                                 <rect key="frame" x="153" y="98" width="295" height="69"/>
                                 <constraints>
@@ -190,17 +179,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EVa-RG-ZnF" firstAttribute="centerX" secondItem="FRy-X1-aGM" secondAttribute="centerX" id="12w-Ki-MIW"/>
-                            <constraint firstItem="nct-0L-Vea" firstAttribute="centerX" secondItem="FRy-X1-aGM" secondAttribute="centerX" id="7JA-FD-Yqi"/>
                             <constraint firstItem="FRy-X1-aGM" firstAttribute="centerX" secondItem="oLN-rW-Vcy" secondAttribute="centerX" id="8sG-Q1-TK8"/>
                             <constraint firstItem="FRy-X1-aGM" firstAttribute="top" secondItem="EVa-RG-ZnF" secondAttribute="bottom" constant="25" id="Knk-qz-2lE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FRy-X1-aGM" secondAttribute="trailing" constant="-20" id="Pee-Xu-PNL"/>
                             <constraint firstItem="FRy-X1-aGM" firstAttribute="leading" secondItem="oLN-rW-Vcy" secondAttribute="leadingMargin" constant="-20" id="ipz-Ve-W5V"/>
-                            <constraint firstItem="nct-0L-Vea" firstAttribute="top" secondItem="FRy-X1-aGM" secondAttribute="bottom" constant="20" id="usc-Pw-HqN"/>
                             <constraint firstItem="FRy-X1-aGM" firstAttribute="centerY" secondItem="oLN-rW-Vcy" secondAttribute="centerY" id="xzA-ju-YFZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="picker" destination="FRy-X1-aGM" id="wo7-vK-uYg"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toQuestionDetail" id="Ha6-is-ece"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6j-sI-s1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
