@@ -104,6 +104,7 @@
 }
 
 - (void) shareToSocialMedia {
+    NSLog(@"Inside Social Media method");
     UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Share the Score to your Friends!!" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         // do nothing;
